@@ -1,8 +1,6 @@
 # Scheduling Policy to the Linux Kernel
-Neste projeto nós iremos testar políticas de escalonamento e implementar uma nova no kernel do
-linux. 
-### Com base na descrição apresentada, para o referido projeto deve ser apresentado os seguintes
-itens:
+Neste projeto nós iremos testar políticas de escalonamento e implementar uma nova no kernel do linux. 
+### Com base na descrição apresentada, para o referido projeto deve ser apresentado os seguintes itens:
 - Descrever o funcionamento de um escalonamento;
 - Criar um tutorial com exemplos de códigos para a criação de uma política de escalonamento
 no linux;
