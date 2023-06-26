@@ -10,12 +10,14 @@ $ uname -r
 2. Obtenha o código do kernel Linux no site Kernel.org e usando o comando wget:
 
 $ cd /tmp
+
 $ wget https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/snapshot/linux-2.6.24.y.tar.gz
 
 
 3. Extraia o arquivo .tar:
 
 $ tar -xzvf 2.6.24.y.tar.gz -C /usr/src
+
 $ cd /usr/src/2.6.24.y
 
 
@@ -27,7 +29,9 @@ $ sudo apt-get install kernel-package libncurses5-dev fakeroot
 5. Aplicar as mudanças de implementação nas pastas sched.c,sched.h e chrtB.c:
 
 /include/linux/sched.h  
+
 /kernel/sched.c 
+
 /usr/bin/chrt
 
 
@@ -44,18 +48,21 @@ $ make-kpkg clean
 8. Em seguida, vamos realmente compilar o kernel. Isso levará um “TEMPO LONGO” talvez 40-50 minutos.
 
 $ fakeroot make-kpkg --initrd --append-to-version=-custom kernel_image kernel_headers
+
 Este processo criará dois arquivos .deb em /usr/src que contém o kernel
 
 
 9.Observe que, ao executar os próximos comandos, isso definirá o novo kernel como o novo kernel padrão. Isso pode dar problema! Se sua máquina não inicializar, você pode pressionar Esc no menu de carregamento do GRUB e selecionar seu kernel antigo. Você pode então desabilitar o kernel em /boot/grub/menu.lst ou tentar compilar novamente. 
 
 $ dpkg -i linux-image-2.6.24-custom_2.6.24-custom-10.00.Custom_i386.deb 
+
 $ dpkg -i linux-headers-2.6.24-custom_2.6.24-custom-10.00.Custom_i386.deb
 
 
 10. Agora reinicie sua máquina. Se tudo funcionar, você deve estar executando seu novo kernel personalizado. Você pode verificar isso usando uname. Observe que o número exato será diferente em sua máquina.:
 
 $ uname -r 
+
 2.6.24-custom
 
 
