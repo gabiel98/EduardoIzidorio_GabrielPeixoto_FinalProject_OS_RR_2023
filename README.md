@@ -4,7 +4,8 @@
 Tutorial
 1. Para começar, precisamos descobrir qual versão do kernel estamos executando no momento: 
 
-$ uname -r
+
+```$ uname -r```
 
 
 2. Obtenha o código do kernel Linux no site Kernel.org e usando o comando wget:
